@@ -27,7 +27,7 @@
         </b-field>
         <b-field ><!-- Label left empty for spacing -->
             <p class="control">
-                <button class="button is-primary" @click="login()">
+                <button class="button is-primary" @click="signin()">
                   submit
                 </button>
             </p>
@@ -76,20 +76,18 @@ export default {
   },
   methods: {
     ...mapActions(['login']),
-    async login () {
+    async signin () {
       this.loading = true
-      this.login(this.user).then((res) => {
+      await this.login(this.user).then((res) => {
         this.loading = false
         this.$router.push('/')
       }).catch((error) => {
-        this.formError = error.message
+        debugger // eslint-disable-line
+        this.formError = error.message ? error.message : error
         this.$dialog.alert({title: 'Error', message: '<h1>' + this.formError + '</h1>', confirmText: 'ok'})
         // this.errors = Object.assign({}, this.errors, { error: ['Invalid credentials'] })
         this.loading = false
       })
-      this.user.email = ''
-      this.user.password = ''
-      this.formError = null
     },
     async logout () {
       try {

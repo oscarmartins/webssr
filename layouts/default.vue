@@ -1,10 +1,12 @@
 <template>
   <div>
     <top-header/>
-    <div >
-      <nuxt keep-alive/>      
+    <bottom-footer/> 
+    <div>
+      <nuxt keep-alive/>     
+      
     </div>
-    <bottom-footer/>
+    
   </div>
 </template>
 

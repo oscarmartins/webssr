@@ -3,15 +3,20 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Knot',
+    title: 'ORC Admin',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, user-scalable=no' },
-      { name: 'apple-mobile-web-app-capable', content: 'yes' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' },
+      { rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      },
+      /** { rel: 'stylesheet',
+        href: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' 
+      }, **/
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Zilla+Slab:400,700'
@@ -20,10 +25,10 @@ module.exports = {
   },
   /*
   ** Global CSS
-  */
   css: [
     { src: '~/assets/css/main.scss', lang: 'scss' }
   ],
+  */
   plugins: [
     { src: '~plugins/lazysizes.js' },
     { src: '~plugins/vue-picture-input.js' },

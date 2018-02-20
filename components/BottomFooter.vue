@@ -13,15 +13,15 @@
 </template>
 
 <style lang="scss">
-.bottom-footer {
-  background: #e3f2ed;
-  padding: 40px 0 120px 0;
-  text-align: center;
-}
-
-.bottom-footer__link {
-  color: #8ba19a;
-  text-decoration: none;
+.fix-footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    z-index: 5;
+    padding: 0.5rem 1.5rem 0.5rem!important;
 }
 
 </style>

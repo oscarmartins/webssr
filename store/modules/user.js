@@ -39,6 +39,7 @@ const actions = {
         setToken(res.access_token)
         resolve(res)
       }).catch((error) => {
+        console.log('ERROR', error)
         reject(error)
       })
     })
