@@ -23,10 +23,5 @@
   color: #8ba19a;
   text-decoration: none;
 }
-.fix-footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    overflow:hidden;
-}
+
 </style>
