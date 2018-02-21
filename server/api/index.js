@@ -13,12 +13,16 @@ router.post('/auth', async function (req, res, next) {
     password: req.body.password,
     scope: '*'
   } **/
-  await axios.post(API_BASE_URL, {REQ_CONTEX: 2000, REQ_ACTION: 2010, REQ_INPUTS: {email: req.body.email, password: req.body.password}}).then((response) => {
+  const payload = {REQ_CONTEX: 2000, REQ_ACTION: 2010, REQ_INPUTS: {email: req.body.email, password: req.body.password}}
+  await axios.post(API_BASE_URL, payload).then((response) => {
     console.log(response.data)
     res.send(response.data)
   }).catch((e) => {
-    console.log('AXIOS', e.response.data)
-    res.status(500).send({message: e.response.data.error})
+    const msg = {message: 'Network Error'}
+    if (e.response) {
+      msg.message = e.response.data.error
+    }
+    res.status(500).send(msg)
   })
 })
 

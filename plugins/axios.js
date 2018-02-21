@@ -8,5 +8,6 @@ if (process.server) {
 options.headers.common = {
   'X-Requested-With': 'XMLHttpRequest'
 }
+options.timeout = 1000
 
 export default axios.create(options)

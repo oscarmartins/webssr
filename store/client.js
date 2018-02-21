@@ -4,7 +4,7 @@ import ls from 'local-storage'
 
 const client = {
   auth: false,
-  apiRoot: 'http://knot.app/api',
+  apiRoot: 'http://localhost:8081/services',
   withAuth () {
     client.auth = true
     return client

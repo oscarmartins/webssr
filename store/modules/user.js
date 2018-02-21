@@ -37,6 +37,7 @@ const actions = {
       client.post('/api/auth', credentials).then((res) => {
         console.log(res)
         setToken(res.access_token)
+        commit(SET_USER, {user: 123})
         resolve(res)
       }).catch((error) => {
         console.log('ERROR', error)

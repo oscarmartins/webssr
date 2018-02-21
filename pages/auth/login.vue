@@ -27,7 +27,7 @@
         </b-field>
         <b-field ><!-- Label left empty for spacing -->
             <p class="control">
-                <button class="button is-primary" @click="signin()">
+                <button class="button is-primary " @click="signin()" v-bind:class="{'is-loading': this.loading}">
                   submit
                 </button>
             </p>
