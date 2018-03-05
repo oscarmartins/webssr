@@ -3,8 +3,9 @@ import { Promise } from 'es6-promise'
 import ls from 'local-storage'
 
 const client = {
+  api: {},
   auth: false,
-  apiRoot: 'http://localhost:8081/services',
+  apiRoot: 'http://localhost:8081/',
   withAuth () {
     client.auth = true
     return client
@@ -39,6 +40,20 @@ httpMethods.forEach((verb) => {
       })
     })
   }
+})
+
+const api = new Promise((resolve, reject) => {
+  client.withoutAuth().get(`${client.apiRoot}api/fetchApiPolicy`).then((res) => {
+    console.log('api', res)
+    resolve(res)
+  }).catch((error) => {
+    console.log('ERROR', error)
+    reject(error)
+  })
+})
+
+client.api = api.then((res) => {
+  return res
 })
 
 export default client

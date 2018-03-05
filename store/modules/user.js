@@ -34,6 +34,7 @@ const actions = {
   },
   login ({ commit }, credentials) {
     return new Promise((resolve, reject) => {
+      console.log(client.api._result.ACCOUNT_RECOVERY)
       client.post('/api/auth', credentials).then((res) => {
         console.log(res)
         setToken(res.access_token)
