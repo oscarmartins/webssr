@@ -19,7 +19,7 @@ module.exports = {
       }, **/
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Zilla+Slab:400,700'
+        href: '//fonts.googleapis.com/css?family=Zilla+Slab:400,700'
       }
     ]
   },
