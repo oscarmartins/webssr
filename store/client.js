@@ -5,7 +5,7 @@ import ls from 'local-storage'
 const client = {
   api: {},
   auth: false,
-  apiRoot: '//orcseven.com/apiV1/',
+  apiRoot: '//orcseven.com/api/', // '//localhost:8081/'
   withAuth () {
     client.auth = true
     return client
@@ -43,8 +43,8 @@ httpMethods.forEach((verb) => {
 })
 
 const api = new Promise((resolve, reject) => {
-  client.withoutAuth().get(`${client.apiRoot}api/fetchApiPolicy`).then((res) => {
-    console.log('api', res)
+  client.withoutAuth().get(`${client.apiRoot}orcv2/fetchApiPolicy`).then((res) => {
+    console.log('orcv2', res)
     resolve(res)
   }).catch((error) => {
     console.log('ERROR', error)

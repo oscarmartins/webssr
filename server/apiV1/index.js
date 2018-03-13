@@ -2,7 +2,14 @@ import { Router } from 'express'
 import axios from 'axios'
 
 const router = Router()
+
+/**
+ 'http://localhost:8081/services'
+ * **/
 const API_BASE_URL = '//orcseven.com/api/services'
+
+console.log('process', process)
+
 router.post('/auth', async function (req, res, next) {
 /**
   const defpar = {
