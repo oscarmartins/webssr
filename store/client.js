@@ -5,7 +5,7 @@ import ls from 'local-storage'
 const client = {
   api: {},
   auth: false,
-  apiRoot: '//orcseven.com/api/',
+  apiRoot: '//orcseven.com/apiV1/',
   withAuth () {
     client.auth = true
     return client

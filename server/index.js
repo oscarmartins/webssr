@@ -1,7 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import { Nuxt, Builder } from 'nuxt'
-import api from './api'
+import api from './apiV1'
 require('dotenv').config()
 
 const app = express()
@@ -12,7 +12,7 @@ app.set('port', port)
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 // Import API Routes
-app.use('/api', api)
+app.use('/apiV1', api)
 
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
