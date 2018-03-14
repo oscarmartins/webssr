@@ -2,13 +2,9 @@ import { Router } from 'express'
 import axios from 'axios'
 
 const router = Router()
+/** const API_BASE_URL = 'http://localhost:8081/services'  */
 
-/**
- 'http://localhost:8081/services'
- * **/
-const API_BASE_URL = '//orcseven.com/api/services'
-
-console.log('process', process)
+const API_BASE_URL = '//127.0.0.1:8081/services'
 
 router.post('/auth', async function (req, res, next) {
 /**
@@ -22,7 +18,7 @@ router.post('/auth', async function (req, res, next) {
   } **/
   const payload = {REQ_CONTEX: 2000, REQ_ACTION: 2010, REQ_INPUTS: {email: req.body.email, password: req.body.password}}
   await axios.post(API_BASE_URL, payload).then((response) => {
-    console.log(response.data)
+    console.log('/auth', response.data)
     res.send(response.data)
   }).catch((e) => {
     const msg = {message: 'Network Error'}
